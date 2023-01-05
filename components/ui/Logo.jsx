@@ -1,8 +1,14 @@
 import React from 'react'
+import Link from 'next/link'
 
 export const Logo = () => {
   return (
-    <div className='text-[2rem] font-dancing font-bold'>Feane</div>
+
+    <Link href="/"><span className='text-[2rem] font-dancing font-bold'>
+      Feane</span>
+      </Link>
+
+    
   )
 }
 

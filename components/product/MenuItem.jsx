@@ -1,13 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
-import Title from '../ui/Title'
 import { HiShoppingCart } from 'react-icons/hi'
+import Link from 'next/link'
 
 const MenuItem = () => {
     return (
 
         <div className='rounded-2xl container bg-slate-900 text-white text-justify hover:scale-105 transition-all'>
             <div className=' bg-[#f1f2f3] rounded-t-lg rounded-bl-3xl  py-2 '>
+                <Link href="/products"></Link>
                 <div className='relative w-40 h-40 mx-auto '>
                     <Image src='/images/hamburger.jpg' alt=''
                         layout='fill'
@@ -20,7 +21,7 @@ const MenuItem = () => {
                     quisquam velit, magnam voluptatem repellendus sed eaque</p>
                 <div className='flex justify-between px-3 mt-10 items-center'>
                     <p>$20</p>
-                    <button className=' bg-orange-400 rounded-full p-2 hover:bg-primary' ><HiShoppingCart /></button>
+                    <Link href="/products"><button className=' bg-orange-400 rounded-full p-2 hover:bg-primary' ><HiShoppingCart /></button></Link>
                 </div>
 
             </div>

@@ -4,17 +4,20 @@ import Search from '../ui/Search';
 import { FaUserAlt, FaShoppingCart, FaSearch } from 'react-icons/fa';
 import { GiHamburgerMenu, GiCancel } from 'react-icons/gi'
 import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { useSelector } from 'react-redux';
+
 
 
 export const Header = () => {
     const [isSearchModal, setIsSearchModal] = useState(false);
     const [isMenuhModal, setIsMenuModal] = useState(false);
-
+    const cart = useSelector((state) => state.cart);
     const router = useRouter()
 
 
     return (
-        <div className= {`h-[5.5rem] z-50 relative ${router.asPath === "/" ? "bg-transparent" : "bg-secondary" }`}>
+        <div className={`h-[5.5rem] z-50 relative ${router.asPath === "/" ? "bg-transparent" : "bg-secondary"}`}>
             <div className='container flex justify-between text-white 
         items-center h-full mx-auto'>
                 <div>
@@ -24,16 +27,16 @@ export const Header = () => {
             sm:text-white text-black sm:flex h-screen sm:w-auto sm:h-auto sm:bg-transparent bg-white ${isMenuhModal !== true && 'hidden'}`}>
                     <ul className='flex gap-x-2 sm:flex-row flex-col items-center font-bold sm:font-normal'>
                         <li className='px-[5px] py-[10px] uppercase hover:text-primary cursor-pointer'>
-                            <a href="">Home</a>
+                            <Link href="/">Home</Link>
                         </li>
                         <li className='px-[5px] py-[10px] uppercase hover:text-primary cursor-pointer'>
-                            <a href="">Menu</a>
+                            <Link href="/menu">Menu</Link>
                         </li>
                         <li className='px-[5px] py-[10px] uppercase hover:text-primary cursor-pointer'>
-                            <a href="">About</a>
+                            <Link href="/about">About</Link>
                         </li>
-                        <li className='px-[5px] py-[10px] uppercase hover:text-primary cursor-pointer'>
-                            <a href="">Book Table</a>
+                        <li className='px-[5px] py-[15px] uppercase hover:text-primary cursor-pointer'>
+                            <Link href="/bookTable">Book Table</Link>
                         </li>
                     </ul>
                     {isMenuhModal &&
@@ -49,19 +52,22 @@ export const Header = () => {
                 </nav>
 
                 <div className='flex gap-x-4 items-center'>
-                    <a href="" className='px-[5px] py-[10px] uppercase hover:text-primary cursor-pointer'>
+                    <Link href="/auth/Login" className='px-[5px] py-[10px] uppercase hover:text-primary cursor-pointer'>
                         <FaUserAlt />
-                    </a>
-                    <a href="" className='px-[5px] py-[10px] uppercase hover:text-primary cursor-pointer'>
-                        <FaShoppingCart />
-                    </a>
-                    <button href="" onClick={() => setIsSearchModal(true)}
+                    </Link>
+                    <Link href="/cart" className='px-[5px] py-[10px] uppercase hover:text-primary cursor-pointer'>
+                        <span className='relative'>
+                            <FaShoppingCart />
+                            <span className="-top-[10px] -right-[10px] absolute bg-primary text-white px-[5px] py-[0.8px] text-xs font-extrabold rounded-full hover:bg-yellow-400">{cart.products.length === 0 ? "0" : cart.products.length}</span>
+                        </span>
+                    </Link>
+                    <button href="/" onClick={() => setIsSearchModal(true)}
                         className='px-[5px] py-[10px] uppercase hover:text-primary cursor-pointer'>
                         <FaSearch />
                     </button>
-                    <a href="" className='md:inline-block hidden'>
+                    <Link href="/" className='md:flex hidden'>
                         <button className='btn-primary'>Order Online</button>
-                    </a>
+                    </Link>
                     <button className='sm:hidden inline-block' onClick={() => setIsMenuModal(true)} >
                         <GiHamburgerMenu className='text-xl' />
                     </button>

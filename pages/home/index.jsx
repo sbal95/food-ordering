@@ -4,19 +4,20 @@ import Campaigns from '../../components/Campaigns'
 import MenuWrapper from '../../components/product/MenuWrapper';
 import About from '../../components/ui/About';
 import Reservation from '../../components/ui/Reservation';
-import Customers from '../../components/Customers';
+import Customers from '../../components/customers/Customers';
+import Footer from '../../components/layout/Footer';
 
 
 export const Index = () => {
   return (
-    <div className="">
+    <React.Fragment>
       <Carousel />
       <Campaigns />
       <MenuWrapper />
       <About />
       <Reservation />
       <Customers/>
-    </div>
+    </React.Fragment>
   )
 };
 

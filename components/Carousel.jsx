@@ -31,6 +31,14 @@ export const Carousel = () => {
         customPaging: (i) => (
             <div className="w-3 h-3 border bg-white rounded-full mt-10"></div>
         ),
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    dots: false,
+                }
+            },
+        ]
     };
     return (
             <div className='h-screen w-full container mx-auto  -mt-[88px]'>
