@@ -5,4 +5,4 @@
 
 ## Ekran Görüntüleri
 
-![Uygulama Ekran Görüntüsü](/images/hanburger.jpg)
+![Uygulama Ekran Görüntüsü](./public/images/hanburger.jpg)
