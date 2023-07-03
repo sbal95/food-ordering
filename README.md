@@ -5,4 +5,4 @@
 
 ## Ekran Görüntüleri
 
-![Uygulama Ekran Görüntüsü]([./public/images/hanburger.jpg](https://res.cloudinary.com/dtrjgpqv2/image/upload/f_auto,q_auto/v1/Rent%20A%20Car/odgbxdliykkpe9tzawzn)https://res.cloudinary.com/dtrjgpqv2/image/upload/f_auto,q_auto/v1/Rent%20A%20Car/odgbxdliykkpe9tzawzn)
+![Uygulama Ekran Görüntüsü](https://res.cloudinary.com/dtrjgpqv2/image/upload/v1688384851/Rent%20A%20Car/odgbxdliykkpe9tzawzn.png)
